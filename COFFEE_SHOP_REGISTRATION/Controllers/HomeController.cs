@@ -7,6 +7,7 @@ namespace COFFEE_SHOP_REGISTRATION.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private CoffeeShopRegistrationDbContext context = new CoffeeShopRegistrationDbContext();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -23,7 +24,7 @@ namespace COFFEE_SHOP_REGISTRATION.Controllers
             return View();
         }
 
-        public IActionResult Registration()
+        public IActionResult CreateRegistration()
         {
             return View();
         }
@@ -33,5 +34,20 @@ namespace COFFEE_SHOP_REGISTRATION.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult AddUserToDb(Registration User)
+        {
+            context.Registrations.Add(User);
+            context.SaveChanges();
+            return RedirectToAction("WelcomeNewUser");
+        }
+
+        public IActionResult WelcomeNewUser()
+        {
+            List<Registration> users = context.Registrations.ToList();
+            return View(users);
+        }
+       
     }
 }

@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "New User Registration";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form class="form-group" method="register" asp-action="AddUserToDb">
+    First Name: <input type="text" name="FirstName" maxlength="20" />
+    Last Name: <input type="text" name="LastName" maxlength="20" />
+    Email: <input type="text" name="Email" maxlength="50"/>
+    Password: <input type="text" name="Password" maxlength="30"/>
+    <input type="submit" value="AddUserToDb"/>
+</form>
