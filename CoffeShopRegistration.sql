@@ -1,0 +1,3 @@
+CREATE TABLE Registration (
+Id INT IDENTITY PRIMARY KEY,
+);
