@@ -4,19 +4,27 @@
 <h1>@ViewData["Title"]</h1>
 
 <form class="form-group" method="register" asp-action="AddUserToDb">
-
-    <label for="firstName">First Name</label>
-    <input type="firstName" name="FirstName" class="form-control" id="firstName" placeholder="Enter first name" required>
-
-    <label for="lastName">First Name</label>
-    <input type="lastName" name="LastName" class="form-control" id="lastName" placeholder="Enter last name" required>
-
-    <label for="inputEmail">Email address</label>
-    <input type="email" name="Email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else unless they pay us.</small>
-
-    <label for="inputPassword">Password</label>
-    <input type="password" class="form-control" name="Password" id="inputPassword" placeholder="Password" required>
-
-    <input type="submit" />
+    <div class="form-group, my-4">
+        <label for="firstName">First Name</label>
+        <input type="text" name="FirstName" class="form-control" id="firstName" placeholder="Enter first name" required pattern="[A-Za-z]{2,20}"
+               title="Name should only include letters and have at lest 2 characters.">
+    </div>
+    <div class="form-group, my-4">
+        <label for="lastName">First Name</label>
+        <input type="lastName" name="LastName" class="form-control" id="lastName" placeholder="Enter last name" required pattern="[A-Za-z]{2,20}"
+               title="Name should only include letters and have at lest 2 characters.">
+    </div>
+    <div class="form-group, my-4">
+        <label for="inputEmail">Email address</label>
+        <input type="email" name="Email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" required maxlength="50">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else unless they pay us.</small>
+    </div>
+    <div class="form-group, my-4">
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control" name="Password" id="inputPassword" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30}"
+               title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters">
+    </div>
+    <div class="form-group, my-4">
+        <input type="submit" />
+    </div>
 </form>
