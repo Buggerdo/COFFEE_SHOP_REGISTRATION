@@ -1,3 +1,7 @@
+CREATE DATABASE CoffeeShopRegistrationDB;
+
+
+
 CREATE TABLE Registration (
 Id INT IDENTITY PRIMARY KEY,
 FirstName NVARCHAR(20) NOT NULL,

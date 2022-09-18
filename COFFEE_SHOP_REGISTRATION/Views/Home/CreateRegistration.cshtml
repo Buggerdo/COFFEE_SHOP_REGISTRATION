@@ -4,9 +4,19 @@
 <h1>@ViewData["Title"]</h1>
 
 <form class="form-group" method="register" asp-action="AddUserToDb">
-    First Name: <input type="text" name="FirstName" maxlength="20" />
-    Last Name: <input type="text" name="LastName" maxlength="20" />
-    Email: <input type="text" name="Email" maxlength="50"/>
-    Password: <input type="text" name="Password" maxlength="30"/>
-    <input type="submit" value="AddUserToDb"/>
+
+    <label for="firstName">First Name</label>
+    <input type="firstName" name="FirstName" class="form-control" id="firstName" placeholder="Enter first name" required>
+
+    <label for="lastName">First Name</label>
+    <input type="lastName" name="LastName" class="form-control" id="lastName" placeholder="Enter last name" required>
+
+    <label for="inputEmail">Email address</label>
+    <input type="email" name="Email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else unless they pay us.</small>
+
+    <label for="inputPassword">Password</label>
+    <input type="password" class="form-control" name="Password" id="inputPassword" placeholder="Password" required>
+
+    <input type="submit" />
 </form>

@@ -36,18 +36,17 @@ namespace COFFEE_SHOP_REGISTRATION.Controllers
         }
 
 
-        public IActionResult AddUserToDb(Registration User)
+        public IActionResult AddUserToDb(Registration user)
         {
-            context.Registrations.Add(User);
+            context.Registrations.Add(user);
             context.SaveChanges();
-            return RedirectToAction("WelcomeNewUser");
+            return RedirectToAction("WelcomeNewUser", user);
         }
 
-        public IActionResult WelcomeNewUser()
+        public IActionResult WelcomeNewUser(Registration user)
         {
-            List<Registration> users = context.Registrations.ToList();
-            return View(users);
-        }
-       
+            //Registration user = context.Registrations.ToList().LastOrDefault();
+            return View(user);
+        }    
     }
 }
