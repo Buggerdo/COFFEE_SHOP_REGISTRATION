@@ -24,7 +24,7 @@ namespace COFFEE_SHOP_REGISTRATION.Controllers
             return View();
         }
 
-        public IActionResult CreateRegistration()
+        public IActionResult CreateUser()
         {
             return View();
         }
@@ -36,14 +36,14 @@ namespace COFFEE_SHOP_REGISTRATION.Controllers
         }
 
 
-        public IActionResult AddUserToDb(Registration user)
+        public IActionResult AddUserToDb(User user)
         {
             context.Registrations.Add(user);
             context.SaveChanges();
             return RedirectToAction("WelcomeNewUser", user);
         }
 
-        public IActionResult WelcomeNewUser(Registration user)
+        public IActionResult WelcomeNewUser(User user)
         {
             //Registration user = context.Registrations.ToList().LastOrDefault();
             return View(user);

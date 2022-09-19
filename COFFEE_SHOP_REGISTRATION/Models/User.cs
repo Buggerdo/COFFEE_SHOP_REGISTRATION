@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace COFFEE_SHOP_REGISTRATION.Models
 {
-    public partial class Registration
+    public partial class User
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = null!;
