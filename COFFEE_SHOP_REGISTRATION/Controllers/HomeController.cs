@@ -38,7 +38,7 @@ namespace COFFEE_SHOP_REGISTRATION.Controllers
 
         public IActionResult AddUserToDb(User user)
         {
-            context.Registrations.Add(user);
+            context.Users.Add(user);
             context.SaveChanges();
             return RedirectToAction("WelcomeNewUser", user);
         }
